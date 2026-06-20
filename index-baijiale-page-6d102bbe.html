@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>与百家乐共处 · 专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+            background: linear-gradient(145deg, #fbe9d7 0%, #f5d6b8 40%, #ebc7a3 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1.2rem;
+            line-height: 1.7;
+            color: #2c241e;
+        }
+
+        .page-wrapper {
+            max-width: 980px;
+            width: 100%;
+        }
+
+        /* hero 横幅 */
+        .hero {
+            background: linear-gradient(125deg, #b47b5e 0%, #9d6b4e 100%);
+            border-radius: 36px 36px 24px 24px;
+            padding: 3.2rem 2.4rem 2.8rem;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 12px 30px rgba(110, 60, 30, 0.2);
+            color: #fef7ed;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.6rem;
+            text-shadow: 0 2px 6px rgba(60, 30, 10, 0.2);
+        }
+
+        .hero .sub {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            border-top: 1px solid rgba(255, 235, 210, 0.35);
+            display: inline-block;
+            padding-top: 0.9rem;
+            margin-top: 0.3rem;
+            font-style: italic;
+        }
+
+        /* 白色卡片 */
+        .card {
+            background: #fffaf6;
+            border-radius: 28px;
+            padding: 2.4rem 2.8rem;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 6px 18px rgba(140, 80, 40, 0.08);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 28px rgba(140, 80, 40, 0.12);
+        }
+
+        .card h2 {
+            font-size: 1.9rem;
+            font-weight: 370;
+            letter-spacing: 0.02em;
+            margin-bottom: 1rem;
+            color: #6f4b30;
+            border-left: 5px solid #dba47b;
+            padding-left: 1.1rem;
+        }
+
+        .card p {
+            margin-bottom: 1.2rem;
+            font-size: 1.08rem;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .card .inset-link {
+            display: inline-block;
+            background: #f2e0cf;
+            color: #4f3523;
+            text-decoration: none;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-weight: 450;
+            font-size: 0.98rem;
+            transition: background 0.18s, transform 0.1s;
+            border: 1px solid transparent;
+        }
+
+        .card .inset-link:hover {
+            background: #e4cdb5;
+            transform: scale(0.97);
+            border-color: #b68962;
+        }
+
+        /* 特色引用 / 点缀 */
+        .quote-badge {
+            background: #eee1d3;
+            display: inline-block;
+            border-radius: 60px;
+            padding: 0.3rem 1.4rem;
+            font-size: 0.9rem;
+            color: #3f2b1b;
+            margin-top: 0.4rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* 页尾 */
+        .footer-note {
+            background: #dac1ae;
+            border-radius: 60px;
+            padding: 1.8rem 2.2rem;
+            margin-top: 1.8rem;
+            text-align: center;
+            color: #2a1f15;
+            box-shadow: inset 0 1px 4px rgba(255, 215, 170, 0.3);
+        }
+
+        .footer-note a {
+            color: #4b2e1a;
+            background: #efe0d0;
+            text-decoration: none;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: background 0.2s;
+            display: inline-block;
+            margin: 0 0.2rem;
+        }
+
+        .footer-note a:hover {
+            background: #dfcbb5;
+        }
+
+        .footer-note .small {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+
+            .hero {
+                padding: 2rem 1.2rem 1.8rem;
+                border-radius: 28px;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .card {
+                padding: 1.8rem 1.4rem;
+                border-radius: 22px;
+            }
+
+            .card h2 {
+                font-size: 1.6rem;
+                padding-left: 0.8rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .card p {
+                font-size: 1rem;
+            }
+
+            .footer-note {
+                padding: 1.2rem 1rem;
+            }
+        }
+
+        /* 分隔点缀 */
+        .muted-sep {
+            width: 60px;
+            height: 2px;
+            background: #dbb89b;
+            margin: 0.6rem 0 1.2rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>百家乐</h1>
+        <div class="sub">一种节奏，一种在场感</div>
+    </div>
+
+    <!-- 第一段：背景展开 -->
+    <div class="card">
+        <h2>从一张牌桌开始</h2>
+        <div class="muted-sep"></div>
+        <p>
+            在多数人的印象里，<a href="https://index-baijiale.com" style="text-decoration: none; color: #6f4b30; font-weight: 500; border-bottom: 1px dashed #b68962;">百家乐</a>往往与灯影、呢喃和偶然的呼吸声联系在一起。但从更远的角度看，它更像一种简洁的叙事框架——三张牌，两个名字，没有多余的动作。这种极简反而让参与的人更容易关注到自己的判断节奏，以及某种介于理性和直觉之间的心理起伏。它既不炫技，也不掩饰，只是呈现一种几乎对称的张力。
+        </p>
+        <p>
+            很多人在接触这个主题之后，并不会急着寻找某种必胜公式，而是渐渐习惯那种「每一局都是独立篇章」的节奏。就像读一本没有页码的书，你永远不知道下一段落在哪里转折。
+        </p>
+        <span class="quote-badge">✦ 不喧哗，自有声</span>
+    </div>
+
+    <!-- 第二段：特点与场景感 -->
+    <div class="card">
+        <h2>场景与分寸</h2>
+        <div class="muted-sep"></div>
+        <p>
+            如果把<a href="https://index-baijiale.com" style="text-decoration: none; color: #6f4b30; font-weight: 500; border-bottom: 1px dashed #b68962;">百家乐</a>放在更现代的语境里观察，你会发现它几乎不依赖复杂的规则门槛——庄、闲、和，三个选项就框定了所有可能性。这种简单既有包容性，也形成了一种独特的社交节奏：旁观者能在几局之内看懂流程，参与者则可以在安静的间隙里整理自己的思路。
+        </p>
+        <p>
+            在一些人那里，它是长途旅行中短暂停靠时的背景音；在另一些人那里，它变成了一种需要掌控注意力的练习。没有固定的氛围，只有使用者赋予它的温度。重要的或许不是输赢，而是你在那个过程里选择怎样分配自己的专注。
+        </p>
+    </div>
+
+    <!-- 第三段：自然提示 + 访问引导 -->
+    <div class="card">
+        <h2>延伸阅读</h2>
+        <div class="muted-sep"></div>
+        <p>
+            如果你对这个主题背后的细节或文化脉络产生兴趣，想了解更完整的背景、不同地区的习惯差异，或者只是想在安静的状态下重新梳理自己的理解，可以直接前往 <a href="https://index-baijiale.com" style="text-decoration: none; color: #6f4b30; font-weight: 500; border-bottom: 1px dashed #b68962;">百家乐</a> 的专题页面。那里没有催促性的引导，只有平实的归纳和一些值得留意的角度。
+        </p>
+        <p>
+            这个站点并不标榜结果，而是提供一种信息入口——你可以根据自己的节奏，慢慢翻阅。保持清醒、保持观察，其余的交给自己。
+        </p>
+        <div style="margin-top: 0.8rem;">
+            <span class="inset-link">↗ 浏览更多</span>
+            <span style="margin-left: 0.8rem; font-size: 0.9rem; color: #6d5440;">(非跳转，仅为装饰提示)</span>
+        </div>
+    </div>
+
+    <!-- 页尾：访问提示 -->
+    <div class="footer-note">
+        <div>
+            <span>如果你愿意，可以随时回来翻看</span>
+            <a href="https://index-baijiale.com">百家乐</a>
+            <span>· 保持自己的节奏</span>
+        </div>
+        <span class="small">背景信息 · 自然沉淀 · 无诱导表述</span>
+    </div>
+
+</div>
+</body>
+</html>
